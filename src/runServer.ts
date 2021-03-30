@@ -1,5 +1,4 @@
 import express from 'express'
-import cors from 'cors'
 
 export const runServer = (mongodb) => {
     const app = express(), port=4000
