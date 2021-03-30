@@ -1,9 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 
 export const runServer = (mongodb) => {
     const app = express(), port=4000
 
     app.use(express.urlencoded({extended: true}))
+        .use(cors())
 
     app.get('/', (req,res) => res.json({message: 'Hello world!'}))
         .get('/users/:skip/:limit', async (req,res) => { 
